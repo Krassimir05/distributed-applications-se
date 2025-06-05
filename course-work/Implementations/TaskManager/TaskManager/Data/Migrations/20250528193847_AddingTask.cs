@@ -4,16 +4,15 @@
 
 namespace TaskManager.Data.Migrations
 {
-    /// <inheritdoc />
-    public partial class Start : Migration
+    
+    public partial class AddingTask : Migration
     {
-        /// <inheritdoc />
+        
         protected override void Up(MigrationBuilder migrationBuilder)
         {
 
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
 

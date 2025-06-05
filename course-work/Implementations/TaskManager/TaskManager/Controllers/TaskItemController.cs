@@ -16,7 +16,7 @@ namespace TaskManager.Controllers
                 _context = context;
             }
 
-            // GET: TaskItem
+            
             public async Task<IActionResult> Index()
             {
             var tasks = await _context.TaskItems
