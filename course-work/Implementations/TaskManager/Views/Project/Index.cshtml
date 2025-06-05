@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TaskManager.Models.Project>
+
+@{
+    ViewData["Title"] = "Всички проекти";
+}
+
+<h1>Всички проекти</h1>
+
+<p>
+    <a asp-action="Create">Създай нов проект</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Име</th>
+            <th>Описание</th>
+            <th>Начало</th>
+            <th>Край</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.StartDate.ToShortDateString()</td>
+                <td>@(item.EndDate.HasValue? item.EndDate.Value.ToShortDateString() : "")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Детайли</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
